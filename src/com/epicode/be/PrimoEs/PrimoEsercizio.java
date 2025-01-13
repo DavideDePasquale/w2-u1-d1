@@ -1,18 +1,17 @@
 package com.epicode.be.PrimoEs;
 
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
 public class PrimoEsercizio {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int[] numeri = new int[7];
+        int[] numeri = new int[5];
 
 
-        for (int i = 1; i < numeri.length -1 ; i++) {
+        for (int i = 0; i < numeri.length ; i++) {
             Random generatore = new Random();
-            int number = generatore.nextInt(10);
+            int number = generatore.nextInt(1,11);
             numeri[i] = number;
             System.out.println("Posizione nell'Array : " + i + " numero scelto : " + numeri[i]);
         }
@@ -23,13 +22,13 @@ public class PrimoEsercizio {
             System.out.println("Quale posizione nell'Array vuoi modificare? Seleziona fra 1 e 5 per le posizioni, 0 per uccidere il terminale");
             int numeroArr = sc.nextInt();
             sc.nextLine();
-            if(numeroArr >= 1 && numeroArr < numeri.length){
+            if(numeroArr >= 0 && numeroArr < numeri.length ){
                 System.out.println("Che numero vuoi mettere?");
                 int numeroMod = sc.nextInt();
                 numeri[numeroArr] = numeroMod;
 
                 System.out.println("Quindi l'array aggiornato è ora : ");
-                for (int i = 1; i < numeri.length -1; i++) {
+                for (int i = 0; i < numeri.length ; i++) {
                     System.out.println("Posizione nell'Array : " + i + " numero scelto : " + numeri[i]);
 
                 }
